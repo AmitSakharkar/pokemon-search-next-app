@@ -6,9 +6,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --search-button-background: 16, 57, 120;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -18,12 +19,48 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+.search-button {
+  background-color: rgb(var(--search-button-background));
+}
+
+.card-list-parent-container {
+  display: grid;
+
+  .card-list-image {
+      justify-self: stretch;
+      background-color: rgb(var(--background-rgb));
+      background: transparent;
+      height: 50%;
+      width: 100%;
+  }
+
+  .card-list-text {
+      background-color: lightgray;
+      justify-self: stretch;
+  }
+}
+
+.card-details-container{
+  display: grid;
+  height: 60%;
+  width: 50%;
+  border: 1px solid whitesmoke;
+  border-radius: 34px;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+
+  .pokemon-image{
+    height: 50%;
+    background-color: aquamarine;
+  }
+  .pokemon-details{
+    height: 50%;
+    background-color: coral;
+  }
 }
 
 @layer utilities {
